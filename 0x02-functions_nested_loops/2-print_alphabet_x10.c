@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- * Description: 'function print_alphabet_x10'
+ * print_alphabet_x1: This prints small letters a to z 10 times
  * Return: Always 0 (Success)
  */
 
