@@ -2,8 +2,7 @@
 
 /**
  * main - Entry point
- * Descrition: function print_alphabet_x10
- * @parameter: void
+ * Description: 'function print_alphabet_x10'
  * Return: Always 0 (Success)
  */
 
