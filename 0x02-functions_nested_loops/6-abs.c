@@ -6,8 +6,11 @@
 int _abs(int j)
 {
 	if (j < 0)
-		j *= -1;
-	else
-		j = j;
-	return (0);
+	{
+		int abs_val;
+
+		abs_val = j * -1;
+		return (abs_val);
+	}
+	return (j);
 }
