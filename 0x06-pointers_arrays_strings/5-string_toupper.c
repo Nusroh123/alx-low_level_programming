@@ -3,18 +3,17 @@
 
 /**
  * string_toupper -  changes all lowercase letters to uppercase
- * @*: pointer
+ * @s: pointer
  * Return: a character
  */
-char *string_toupper(char *)
+char *string_toupper(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (*(ch + i) != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (*(ch + i) >= 90 && *(ch + i) <= 122;)
-			*(ch + i) = *(ch + i) - '';
-		i++;
+		if (s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 	}
-	return (ch);
+	return (s);
 }
