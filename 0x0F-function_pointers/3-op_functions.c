@@ -8,10 +8,7 @@
  */
 int op_add(int a, int b)
 {
-	int add;
-
-	add = a + b;
-	return (add);
+	return (a + b);
 }
 /**
  * op_sub - subtraction
@@ -21,10 +18,7 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-	int subt;
-
-	subt = a - b;
-	return (subt);
+	return (a - b);
 }
 /**
  * op_mul - multiplication
@@ -35,10 +29,7 @@ int op_sub(int a, int b)
  */
 int op_mul(int a, int b)
 {
-	int mul;
-
-	mul = a * b;
-	return (mul);
+	return (a * b);
 }
 /**
  * op_div - division
@@ -49,10 +40,7 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-	int div;
-
-	div = a / b;
-	return (div);
+	return (a / b);
 }
 /**
  * op_mod - modulus
@@ -62,8 +50,5 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
-	int mod;
-
-	mod = a % b;
-	return (mod);
+	return (a % b);
 }
