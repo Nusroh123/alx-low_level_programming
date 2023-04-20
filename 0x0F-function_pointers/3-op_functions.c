@@ -3,8 +3,8 @@
 
 /**
  * op_add: addition
- * @a: ...
- * @b: ...
+ * @a: value 1
+ * @b: value 2
  * Return: add
  */
 int op_add(int a, int b)
@@ -13,8 +13,8 @@ int op_add(int a, int b)
 }
 /**
  * op_sub - subtraction
- * @a: ...
- * @b: ..
+ * @a: value 1
+ * @b: value 2
  * Return: subt
  */
 int op_sub(int a, int b)
@@ -23,8 +23,8 @@ int op_sub(int a, int b)
 }
 /**
  * op_mul - multiplication
- * @a: ...
- * @b: ...
+ * @a: value 1
+ * @b: value 2
  * Return: mul
  *
  */
@@ -34,8 +34,8 @@ int op_mul(int a, int b)
 }
 /**
  * op_div - division
- * @a: ...
- * @b: ...
+ * @a: value 1
+ * @b: value 2
  * Return: div
  *
  */
@@ -45,8 +45,8 @@ int op_div(int a, int b)
 }
 /**
  * op_mod - modulus
- * @a: ...
- * @b: ...
+ * @a: value 1
+ * @b: value 2
  * Return: mod
  */
 int op_mod(int a, int b)
