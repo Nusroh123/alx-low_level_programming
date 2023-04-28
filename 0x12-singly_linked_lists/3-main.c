@@ -9,8 +9,10 @@
  * Return: Always 0.
  */
 int main(void)
-{	
-	list_t *head;head = NULL;
+{
+	list_t *head;
+
+	head = NULL;
 	add_node_end(&head, "Anne");
 	add_node_end(&head, "Colton");
 	add_node_end(&head, "Corbin");
