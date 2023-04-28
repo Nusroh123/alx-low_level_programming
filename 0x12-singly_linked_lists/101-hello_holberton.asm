@@ -1,10 +1,10 @@
 
 	global	main
-	extern	puts
-	section	.text
+	extern	printf
 main:
-	mov	rdi, message
-	call	puts
+	mov	edi,	message
+	xor	eax,	eax
+	call	printf
 	ret
 message:
-	db	"Hello, Holberton", 0
+	db	'Hello, Holberton\n',0
