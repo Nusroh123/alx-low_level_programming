@@ -7,4 +7,4 @@ main:
 	call	printf
 	ret
 message:
-	db	'Hello, Holberton\n',0
+	db	`Hello, Holberton\n`, 0
