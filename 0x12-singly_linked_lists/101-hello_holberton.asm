@@ -2,8 +2,8 @@
 	global	main
 	extern	printf
 main:
-	mov	edi,	message
+	mov	edi,	format
 	xor	eax,	eax
 	call	printf
 	ret
-message: db	`Hello, Holberton\n`,0
+format: db	`Hello, Holberton\n`,0
