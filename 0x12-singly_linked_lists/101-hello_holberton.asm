@@ -6,5 +6,4 @@ main:
 	xor	eax,	eax
 	call	printf
 	ret
-message:
-	db	`Hello, Holberton\n`, 0
+message: db	`Hello, Holberton\n`,0
