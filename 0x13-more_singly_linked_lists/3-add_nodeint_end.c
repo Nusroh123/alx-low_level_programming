@@ -51,9 +51,9 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		*head = x;
 		return (x);
 	}
-	y = *head;
 	while (y->next)
 		y = y->next;
+	y = *head;
 	y->next = x;
 	return (x);
 
