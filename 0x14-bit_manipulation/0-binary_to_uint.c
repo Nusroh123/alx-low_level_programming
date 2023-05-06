@@ -15,15 +15,11 @@ unsigned int binary_to_uint(const char *b)
 	val = 0;
 	i = 0;
 
-	if (b[i] == 'a' || b[i] == 'b' || b[i] == 'c')
-		return (0);
-	if (b[i] == 'd' || b[i] == 'e' || b[i] == 'f')
-		return (0);
 	if (b == NULL)
 		return (0);
 	while (b[i] == '0' || b[i] == '1')
 	{
-		val <<= 1;
+		val = val << 1;
 		val += b[i] - '0';
 		i++;
 	}
