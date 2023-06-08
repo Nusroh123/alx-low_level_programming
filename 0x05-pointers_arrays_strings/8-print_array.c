@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * print_array: print array
- * @a:pointer
- * @n:nuber of eleents in an array
+ * print_array - print array
+ * @a: pointer
+ * @n: number of elements in an array
  * Return: void
  */
 void print_array(int *a, int n)
