@@ -11,9 +11,9 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-	long unsigned int i;
+	unsigned long int i;
 
-	for (i = 0; i < strlen(src); i++)
+	for (i = 0; i < strlen(src) && src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
 	}
