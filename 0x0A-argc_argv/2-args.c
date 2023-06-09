@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	if (argc > 1)
 	{
 		for (count = 0; count < argc; count++)
-			printf("argv[%d] = %s\n", count, argv[count]);
+			printf("%s\n", argv[count]);
 	}
 	else
 		printf("No argument received\n");
