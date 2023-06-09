@@ -16,7 +16,5 @@ int main(int argc, char *argv[])
 		for (count = 0; count < argc; count++)
 			printf("%s\n", argv[count]);
 	}
-	else
-		printf("No argument received\n");
 	return (0);
 }
