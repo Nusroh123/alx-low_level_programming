@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 			for (i = 0; argv[num_count][i] != '\0'; i++)
 			{
 				if (!isdigit(argv[num_count][i]))
-				{	
+				{
 					printf("Error\n");
 					return (1);
 				}
@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 			add += atoi(argv[num_count]);
 		}
 		printf("%d\n", add);
-		
 	}
 	if (argc <= 1)
 		printf("0\n");
