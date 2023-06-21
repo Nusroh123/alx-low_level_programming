@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 
 /**
@@ -13,7 +14,7 @@ int _strlen(char *s)
 
 	count = 0;
 
-	for (count = 0; (*s = '\0'); s++)
+	for (count = 0; *s != '\0'; count++)
 	{
 		count++;
 		s++;
@@ -27,14 +28,13 @@ int _strlen(char *s)
  * @new: destination
  * Return: pointer to new
  */
-char *_strcpy(char *new, char *old)
+char _strcpy(char *new, char *old)
 {
 	int i;
 
 	for (i = 0; old[i] != '\0'; i++)
-	{
 		new[i] = old[i];
-	}
+
 	new[i++] = '\0';
 
 	return (new);
@@ -49,7 +49,7 @@ char *_strcpy(char *new, char *old)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *pet;
+	dog_t *new_dog;
 	int nameL, ownerL;
 
 	nameL = 0;
@@ -57,14 +57,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (name != NULL && owner != NULL)
 	{
-		nameL = _strlen(name) + 1;
-		ownerL = _strlen(owner) + 1;
+		nameL = _strlen(*name) + 1;
+		ownerL = _strlen(*owner) + 1;
 		pet = malloc(sizeof(dog_t));
 
 		if (pet == NULL)
 			return (NULL);
 
-		pet->name = malloc(sizeof(char) * nameL);
+		pet->name = malloc(sizeof(char) * nameL + 1);
 
 		if (pet->name == NULL)
 		{
@@ -72,7 +72,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 			return (NULL);
 		}
 
-		pet->owner = malloc(sizeof(char) * ownerL);
+		pet->owner = malloc(sizeof(char) * ownerL + 1);
 
 		if (pet->owner == NULL)
 		{

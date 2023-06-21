@@ -3,6 +3,7 @@
 
 /**
  * print_dog -  print  dog info
+ * struct dog- dog info
  * @d: struct
  * Return: nothing
  */
