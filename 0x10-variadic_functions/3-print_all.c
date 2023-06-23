@@ -11,13 +11,10 @@ void print_all(const char * const format, ...)
 	const char *separator;
 	char *str;
 
-	if (format == NULL)
-		return;
-
 	i = 0;
 	va_start(ap, format);
 	separator = "";
-	while (format[i])
+	while (format && format[i])
 	{
 		switch (format[i])
 		{
@@ -34,7 +31,8 @@ void print_all(const char * const format, ...)
 				str = va_arg(ap, char*);
 				if (str != NULL)
 					printf("%s%s", separator, str);
-				printf("%s%s", separator, "(nil)");
+				if (str == NULL)
+					printf("%s%s", separator, "(nil)");
 				break;
 			default:
 				break;
@@ -43,5 +41,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(ap);
-	printf("\nseyi");
+	printf("\n");
 }
