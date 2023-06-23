@@ -32,11 +32,12 @@ void print_all(const char * const format, ...)
 				break;
 			case 's':
 				str = va_arg(ap, char*);
-				printf("%s%s", separator, (str != NULL) ? str : "(nil)");
+				if (str != NULL)
+					printf("%s%s", separator, str);
+				printf("%s%s", separator, "(nil)");
 				break;
 			default:
-				i++;
-				continue;
+				break;
 		}
 		separator = ", ";
 		i++;
