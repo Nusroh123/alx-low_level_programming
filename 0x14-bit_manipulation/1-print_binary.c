@@ -21,7 +21,7 @@ void print_binary(unsigned long int n)
 	{
 		if ((n & bit) != 0 || start)
 		{
-			_putchar((n & bit) != 0 ? 1 : 0);
+			_putchar((n & bit) != 0 ? '1' : '0');
 			start = 1;
 		}
 		bit >>= 1;
