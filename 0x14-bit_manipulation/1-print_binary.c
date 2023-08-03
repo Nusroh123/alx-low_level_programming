@@ -3,14 +3,14 @@
 /**
  * print_binary - prints the binary representation of a number
  * @n: integer number
- * Return: Nothing
+ * Return: void
  */
 void print_binary(unsigned long int n)
 {
-	int start;
+	int i;
 	unsigned long int bit;
 
-	start = 0;
+	i = 0;
 	bit = 1;
 	bit <<= sizeof(unsigned long int) * 8 - 1;
 
@@ -19,11 +19,13 @@ void print_binary(unsigned long int n)
 
 	while (bit > 0)
 	{
-		if ((n & bit) != 0 || start)
+		if ((n & bit) != 0 || i)
 		{
 			_putchar((n & bit) != 0 ? '1' : '0');
-			start = 1;
+			i = 1;
 		}
 		bit >>= 1;
+
 	}
+
 }
