@@ -1,50 +1,51 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
- * @filename: name of the file
- * @letters: number of char
- * Return: something
+ * read_textfile - reads a text file and prints it to
+ *  the POSIX standard output.
+ *  @filename: name of file
+ *  @letters: number of letters it should read and print
+ *  Return: number of letters 0r 0 if fails
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file;
+	int fileDesc;
 	char *buffer;
-	ssize_t b_read;
-	ssize_t b_wrt;
-
-	file = open(filename, O_RDONLY);
-	buffer = (char *)malloc(sizeof(char) * (letters + 1));
-	b_read = read(file, buffer, letters);
-	b_wrt = write(STDOUT_FILENO, buffer, b_read);
+	ssize_t bufRead, bufWrite;
 
 	if (filename == NULL)
 		return (0);
 
-	if (file == -1)
+	fileDesc = open(filename, O_RDONLY);
+	if (fileDesc == -1)
 		return (0);
 
+	buffer = (char *)malloc(sizeof(char) * (letters + 1));
 	if (buffer == NULL)
 	{
-		close(file);
+		close(fileDesc);
 		return (0);
 	}
 
-	if (b_read <= 0)
+	bufRead = read(fileDesc, buffer, letters);
+	if (bufRead <= 0)
 	{
-		close(file);
+		close(fileDesc);
 		free(buffer);
 		return (0);
 	}
 
-	if (b_wrt != b_read)
+	buffer[bufRead] = '\0';
+
+	bufWrite = write(STDOUT_FILENO, buffer, bufRead);
+	if (bufWrite != bufRead)
 	{
-		close(file);
+		close(fileDesc);
 		free(buffer);
 		return (0);
 	}
 
-	close(file);
+	close(fileDesc);
 	free(buffer);
-	return (b_wrt);
+	return (bufRead);
 }
