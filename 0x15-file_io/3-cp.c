@@ -40,7 +40,7 @@ int main(int ac, char *av[])
 		return (98);
 	}
 
-	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destFileDesc == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", av[2]);
@@ -52,7 +52,7 @@ int main(int ac, char *av[])
 	{
 		if (write(destFileDesc, buf, bRead) == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", file_to);
+			fprintf(stderr, "Error: Can't write to %s\n", file_to);
 			close(srcFileDesc);
 			close(destFileDesc);
 			return (99);
@@ -60,20 +60,20 @@ int main(int ac, char *av[])
 	}
 	if (bRead == -1)
 	{
-		dprintf(2, "Error reading from %s: %s\n", file_from, strerror(errno));
+		fprintf(stderr, "Error reading from %s: %s\n", file_from, strerror(errno));
 		close(srcFileDesc);
 		close(destFileDesc);
 		return (98);
 	}
 	if (close(srcFileDesc) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", srcFileDesc);
+		fprintf(stderr, "Error: Can't close fd %d\n", srcFileDesc);
 		close(destFileDesc);
 		return (100);
 	}
 	if (close(destFileDesc) == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", destFileDesc);
+		fprintf(stderr, "Error: Can't close fd %d\n", destFileDesc);
 		return (100);
 	}
 
