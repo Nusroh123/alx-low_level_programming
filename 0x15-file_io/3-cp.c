@@ -77,12 +77,6 @@ int main(int ac, char *av[])
 		return (100);
 	}
 
-	if (chmod(file_to, 0644) == -1)
-	{
-		fprintf(stderr, "Error: Can't set permissions for %s\n", file_to);
-		return (100);
-	}
-
 	return (0);
 
 }
