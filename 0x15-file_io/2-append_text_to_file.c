@@ -12,6 +12,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fileDesc;
+	size_t i;
 	ssize_t len, contentWrite;
 
 	if (filename == NULL)
@@ -28,6 +29,15 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		for (len = 0; text_content[len] != '\0'; len++)
 			continue;
+
+		for (i = 0; text_content[i] != '\0'; i++)
+		{
+			if (text_content[i] == '\n')
+			{
+				close(fileDesc);
+				return (-1);
+			}
+		}
 
 		contentWrite = write(fileDesc, text_content, len);
 		if (contentWrite == -1)
