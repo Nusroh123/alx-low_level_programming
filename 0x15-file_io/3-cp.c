@@ -40,7 +40,7 @@ int main(int ac, char *av[])
 		return (98);
 	}
 
-	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (destFileDesc == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", av[2]);
