@@ -40,7 +40,7 @@ int main(int ac, char *av[])
 		return (98);
 	}
 
-	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	destFileDesc = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 	if (destFileDesc == -1)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", av[2]);
@@ -74,6 +74,12 @@ int main(int ac, char *av[])
 	if (close(destFileDesc) == -1)
 	{
 		fprintf(stderr, "Error: Can't close fd %d\n", destFileDesc);
+		return (100);
+	}
+
+	if (chmod(file_to, 0644) == -1)
+	{
+		fprintf(stderr, "Error: Can't set permissions for %s\n", file_to);
 		return (100);
 	}
 
